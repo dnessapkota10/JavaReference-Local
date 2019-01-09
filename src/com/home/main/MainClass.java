@@ -102,8 +102,8 @@ public class MainClass {
 		//StringUtilsClass.checkWordInString();
 		 
 		 //ReturnLabelHttpPost.printLabels();
-		String raNumber = "";
-		raNumber = "456";
+		//String raNumber = "";
+		//raNumber = "456";
 		
 		/*DecimalFormat df = new DecimalFormat("#.00"); 
 		int totalWeight = 2350;

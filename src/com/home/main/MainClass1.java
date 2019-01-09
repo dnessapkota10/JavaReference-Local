@@ -36,7 +36,7 @@ public class MainClass1 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		double totalWeight = 72544.5;
+		//double totalWeight = 72544.5;
 		//ReturnLabelHttpPost.printLabelMI();
 		//System.out.println(String.format("%.4f", (double)totalWeight/10000));
 		
@@ -94,6 +94,14 @@ public class MainClass1 {
 		
 		
 		StringFormat.dateTimeFormat();
+		StringFormat.testDate();
+		StringFormat.simpleFormat();
+		StringFormat.testArgumentIndex();
+		StringFormat.testCharacter();
+		StringFormat.testInteger();
+		StringFormat.testFloat();		
+		StringFormat.testFlags();
+		StringFormat.testGeneral();
 	}
 	
 	
