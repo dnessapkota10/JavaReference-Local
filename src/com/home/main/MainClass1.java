@@ -24,8 +24,8 @@ import com.home.exception.handling.NestedException;
 import com.home.jackson.JSONObjectDateConverter;
 import com.home.nulls.NullObject;
 import com.home.strings.StringBuilderClass;
+import com.home.strings.StringFormat;
 import com.home.varargs.VarArgsEmptyEnum;
-import com.nsa.integration.customerportal.external.ups.UpsApiServiceBean;
 
 import come.home.ups.api.ReturnLabelHttpPost;
 
@@ -92,8 +92,8 @@ public class MainClass1 {
 //			System.out.println("Test null");
 //		}
 		
-		final String test = " ";
-		System.out.println(!StringUtils.isEmpty(test));
+		
+		StringFormat.dateTimeFormat();
 	}
 	
 	
