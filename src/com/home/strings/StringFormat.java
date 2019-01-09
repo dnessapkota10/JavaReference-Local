@@ -1,5 +1,6 @@
 package com.home.strings;
 
+import java.text.DateFormat;
 import java.util.Date;
 
 //https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html
@@ -11,18 +12,43 @@ public class StringFormat {
 		System.out.println(String.format("Today's date in dd/mm/yy format %1$td/%1$tm/%1$ty", new Date()));
 		System.out.println(String.format("Today's date in dd/mm/yyyy format %1$td/%1$tm/%1$tY", new Date()));
 		System.out.println(String.format("Today's date in dd-mm-yy format %1$td-%1$tm-%1$ty", new Date()));
-		System.out.println(String.format("Today's date in dd-mm-yyy format %1$td-%1$tm-%1$tY", new Date()));
+		System.out.println(String.format("Today's date in dd-mm-yyyy format %1$td-%1$tm-%1$tY", new Date()));
+		
+		Date		date       = new Date();
+		DateFormat	dateformat = DateFormat.getDateInstance( DateFormat.DEFAULT );
+		String		string     = dateformat.format( date );
+
+		System.out.println("===========");
+		System.out.println( "DEFAULT: " + string );
+
+		dateformat = DateFormat.getDateInstance( DateFormat.FULL );
+		string     = dateformat.format( date );
+		System.out.println( "   FULL: " + string );
+
+		dateformat = DateFormat.getDateInstance( DateFormat.LONG );
+		string     = dateformat.format( date );
+		System.out.println( "   LONG: " + string );
+
+		dateformat = DateFormat.getDateInstance( DateFormat.MEDIUM );
+		string     = dateformat.format( date );
+		System.out.println( " MEDIUM: " + string );
+
+		dateformat = DateFormat.getDateInstance( DateFormat.SHORT );
+		string     = dateformat.format( date );
+		System.out.println( "  SHORT: " + string );
 		
 	}
 	
 	public static void simpleFormat()
 	   {
+			System.out.println("===========");
 	        System.out.println( "simpleFormat():" );
 	        System.out.println( String.format( "    Hi %s, you owe me $%5.2f.", "Jack", 25. ) );
 	   }
 
 	   public static void testArgumentIndex()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestArgumentIndex():" );
 	        System.out.println( String.format( "    A number may be formatted as a string \"%1$s\""
 	                     + " or a number %1$d", 10 ) );
@@ -35,12 +61,14 @@ public class StringFormat {
 
 	   public static void testCharacter()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestCharacter():" );
 	        System.out.println( String.format( "    '%1$s', '%1$c', '%1$C'", 97 ) );
 	   }
 
 	   public static void testInteger()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestInteger():" );
 	        System.out.println( String.format( "    %d, %o, %h, %H", 161, 161, 161, 161 ) );
 
@@ -50,12 +78,14 @@ public class StringFormat {
 
 	   public static void testFloat()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestFloat():" );
 	        System.out.println( String.format( "    %1$.2e, %1$.2f, %1$.2g, %1$.2a", 12345678.9999932 ) );
 	   }
 
 	   public static void testDate()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestDate():" );
 
 	       long currentTime = System.currentTimeMillis();
@@ -74,6 +104,7 @@ public class StringFormat {
 
 	   public static void testFlags()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestFlags():" );
 	        System.out.println( String.format( "    '%1$s', '%1$-10.8s', '%1$.12s', '%1$-25s'", "Huge Fruit, Inc." ) );
 	        //System.out.println( String.format( "    '%1$s', '%1$#s', '%1$-10.8s', '%1$.12s', '%1$-25s'", "Huge Fruit, Inc." ) );
@@ -81,6 +112,7 @@ public class StringFormat {
 
 	   public static void testGeneral()
 	   {
+		    System.out.println("===========");
 	        System.out.println( "\ntestGeneral():" );
 	        System.out.println(
 	       // any object can be formatted as string
