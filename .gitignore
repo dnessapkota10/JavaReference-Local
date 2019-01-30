@@ -18,7 +18,16 @@
 *.zip
 *.tar.gz
 *.rar
+*.prefs
+.settings/*.prefs
+
+# Eclipse Core      
+.project
+
+# JDT-specific (Eclipse Java Development Tools)     
+.classpath
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 /com/
+/target/
