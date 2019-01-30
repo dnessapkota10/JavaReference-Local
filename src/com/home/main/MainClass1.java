@@ -1,11 +1,16 @@
 package com.home.main;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,16 +21,20 @@ import org.apache.http.message.BasicNameValuePair;
 
 import com.home.collections.CollectorsJoining;
 import com.home.collections.ListOfMap;
+import com.home.collections.MapClass;
 import com.home.database.DatabaseConnection;
 import com.home.datetime.CheckDayRange;
+import com.home.datetime.DateClass;
 import com.home.datetime.DifferenceInMinute;
+import com.home.datetime.SqlDateClass;
 import com.home.enums.EnumSetDemo;
 import com.home.exception.handling.NestedException;
 import com.home.jackson.JSONObjectDateConverter;
+import com.home.non.primitive.BigDecimalClass;
 import com.home.nulls.NullObject;
 import com.home.strings.StringBuilderClass;
+import com.home.strings.StringFormat;
 import com.home.varargs.VarArgsEmptyEnum;
-import com.nsa.integration.customerportal.external.ups.UpsApiServiceBean;
 
 import come.home.ups.api.ReturnLabelHttpPost;
 
@@ -36,7 +45,7 @@ public class MainClass1 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		double totalWeight = 72544.5;
+		//double totalWeight = 72544.5;
 		//ReturnLabelHttpPost.printLabelMI();
 		//System.out.println(String.format("%.4f", (double)totalWeight/10000));
 		
@@ -92,8 +101,32 @@ public class MainClass1 {
 //			System.out.println("Test null");
 //		}
 		
-		final String test = " ";
-		System.out.println(!StringUtils.isEmpty(test));
+		
+//	StringFormat.dateTimeFormat();
+//		StringFormat.testDate();
+//		StringFormat.simpleFormat();
+//		StringFormat.testArgumentIndex();
+//		StringFormat.testCharacter();
+//		StringFormat.testInteger();
+//		StringFormat.testFloat();		
+//		StringFormat.testFlags();
+//		StringFormat.testGeneral();
+		
+//		SqlDateClass.defineDate();
+		//DateClass.stringToDate();
+		
+//		StringFormat.portalTrackNoComment();
+		
+//		BigDecimal x = new BigDecimal("0.00");
+//		BigDecimal y = BigDecimal.ZERO;
+//		BigDecimal z = null;
+//		System.out.println(x.equals(y));
+//		System.out.println(x.compareTo(y) == 0 ? "true": "false");
+		
+//		BigDecimalClass.twoDimensionalArray();
+		
+		//MapClass.emptyMap();.
+		
 	}
 	
 	

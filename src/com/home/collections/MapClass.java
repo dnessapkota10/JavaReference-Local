@@ -1,5 +1,6 @@
 package com.home.collections;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -33,6 +34,18 @@ public class MapClass {
 		System.out.println("map.keySet().retainAll(checks):: " +map.keySet().retainAll(checks));
 		System.out.println("Map after retainAll():: " +map);
 		
+	}
+	
+	public static void emptyMap(){
+		System.out.println(Collections.EMPTY_MAP);
+		Map map = new HashMap<String,String>();
+		System.out.println(map);
+		map.put("1",null);
+		System.out.println(map);
+		
+		Map map1 = Collections.EMPTY_MAP;
+		map1.put("1",null);
+		System.out.println(map1);	
 	}
 	
 	public void map() {
