@@ -3,10 +3,24 @@ package com.home.strings;
 import java.text.DateFormat;
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
+
 //https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html
 //http://www.javahotchocolate.com/topics/string-format.html
 public class StringFormat {
 
+	//CPORTAL 01/17/2019 02:28:19 PM - RA Track No. 920239021656245434
+	public static void portalTrackNoComment(){
+		final String PORTAL_CHANGE_COMMENT = "CP %1$tm/%1$td/%1$ty %1$tr %2$s"; 
+		final String trackingNumber = "92023902165624543400001103";
+		final String fullComment = String.format(PORTAL_CHANGE_COMMENT, new Date(), "RA Track# " + trackingNumber); //JCP-218 : Fit tracking number in a single line
+        {
+            final String comment = StringUtils.left(fullComment, 65);
+            System.out.println("Comment::" +comment);
+        }
+        
+	}
+	
 	public static void dateTimeFormat(){
 		
 		System.out.println(String.format("Today's date in dd/mm/yy format %1$td/%1$tm/%1$ty", new Date()));

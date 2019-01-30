@@ -2,6 +2,8 @@ package com.home.java8;
 
 import java.util.Optional;
 
+import com.nsa.integration.customerportal.api.Distributor;
+
 public class OptionalClass {
 //https://dzone.com/articles/optional-ispresent-is-bad-for-you
 	
@@ -30,5 +32,8 @@ public class OptionalClass {
 		String nullName = null;
 	    String name = Optional.ofNullable(nullName).orElse("john");
 	    System.out.println("Optional.ofNullable(nullName).orElse('john')::" +Optional.ofNullable(nullName).orElse("john"));
+	    
+	    final String distributor = null;
+	    System.out.println(Optional.ofNullable(distributor).map(s -> "juiceplus.com/+" + s).orElse(""));
 	}
 }
