@@ -29,6 +29,8 @@ public class AddressXML {
     private String mobilePhone;
     private String ssn;
     
+    public AddressXML(){} 
+    
 	public String getTitle() {
 		return title;
 	}
