@@ -7,6 +7,8 @@ import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import com.home.pojo.AddressXML;
 import com.home.pojo.Customer;
 
 //https://docs.jboss.org/resteasy/docs/3.0-beta-3/userguide/html/RESTEasy_Client_Framework.html
@@ -19,19 +21,19 @@ public class CustomerRestClient {
 			
 		Client client = ClientBuilder.newBuilder().build();		
 		        
-		WebTarget target = client.target(config.get("TestRoot") + "/customer/" +customerId);
+		WebTarget target = client.target(config.get("TestRoot") + "/customer/" +customerId + "/orders/6002041/shipping");
 		
 		//target.path(config.get("TestRoot") + "/Customer/" +customerId);		
 		Response response = target.request()
-								   .header("Origin", config.get("origin"))
-								   //.accept(MediaType.APPLICATION_JSON)								   
+								   //.header("Origin", config.get("origin"))
+								   .accept(MediaType.APPLICATION_JSON)								   
 								   .get();
 		
 		System.out.println(response.getStatus());
-		String output = response.readEntity(String.class);
-        //final Customer customer = response.readEntity(Customer.class);
+		//String output = response.readEntity(String.class);
+        final AddressXML address = response.readEntity(AddressXML.class);
         
-        System.out.println(output);
+        System.out.println(address.getAddressLine1());
         
         
         response.close();  // You should close connections!
