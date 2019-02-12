@@ -1,0 +1,28 @@
+The StackOverflowError in Java
+======================================================================
+When a function call is invoked by a Java application, a stack frame is allocated on the call stack. 
+The stack frame contains the parameters of the invoked method, its local parameters, and the return address of the method. 
+The return address denotes the execution point from which, the program execution shall continue after the invoked method returns. 
+If there is no space for a new stack frame then, the StackOverflowError is thrown by the Java Virtual Machine (JVM).
+The most common case that can possibly exhaust a Java application’s stack is recursion. In recursion, a method invokes itself during its execution. 
+Recursion is considered as a powerful general-purpose programming technique, but must be used with caution, in order for the StackOverflowError to be avoided.
+
+public class StackOverflowErrorExample {
+     
+    public static void recursivePrint(int num) {
+        System.out.println("Number: " + num);
+         
+        if(num == 0)
+            return;
+        else
+            recursivePrint(++num);
+    }
+     
+    public static void main(String[] args) {
+        StackOverflowErrorExample.recursivePrint(1);
+    }
+}
+
+In this example, we define a recursive method, called recursivePrint that prints an integer and then, calls itself, with the next successive integer as an argument. 
+The recursion ends once we invoke the method, passing 0 as a parameter. 
+However, in our example, we start printing numbers from 1 and thus, the recursion will never terminate.
