@@ -27,6 +27,9 @@ public class AddressXML {
     private boolean clean;
     private String email;
     private String mobilePhone;
+    private String ssn;
+    
+    public AddressXML(){} 
     
 	public String getTitle() {
 		return title;
@@ -129,6 +132,12 @@ public class AddressXML {
 	}
 	public void setMobilePhone(String mobilePhone) {
 		this.mobilePhone = mobilePhone;
+	}
+	public String getSsn() {
+		return ssn;
+	}
+	public void setSsn(String ssn) {
+		this.ssn = ssn;
 	}
     
     
