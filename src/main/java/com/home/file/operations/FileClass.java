@@ -5,13 +5,40 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.util.regex.Pattern;
 
 public class FileClass {
+
+	// Copy file from source directory to destination
+	// Check if the same file is not there before copying
+	// Rename file add extension as .new
+	public static void copyFiles() throws IOException {
+
+		File sourceLocation = new File("C:\\temp\\test.txt");
+		File targetLocation = new File("C:\\temp\\test1.txt.new");
+		if (!targetLocation.exists()) {
+
+			InputStream in = new FileInputStream(sourceLocation);
+			OutputStream out = new FileOutputStream(targetLocation);
+
+			// Copy the bits from input stream to output stream
+			byte[] buf = new byte[1024];
+			int len;
+			while ((len = in.read(buf)) > 0) {
+				out.write(buf, 0, len);
+			}
+			in.close();
+			out.close();
+
+		}
+	}
 
 	public static void countLinesWordsCharactersParagraphs() {
 		File file = new File("src/main/resources/test/test.txt");
@@ -98,20 +125,18 @@ public class FileClass {
 				/*
 				 * if ((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >=
 				 * 'A' && c <= 'Z')) { System.out.println(c); }
-				
+				 * 
+				 * 
+				 * //Check with ASCII if ((c >= 65 && c <= 122))
+				 * System.out.println("Alphabet");
+				 * 
+				 * // CHECKING FOR DIGITS else if (c >= 48 && c <= 57)
+				 * System.out.println("Digit");
+				 * 
+				 * // OTHERWISE SPECIAL CHARACTER else
+				 * System.out.println(" Special Character ");
+				 */
 
-				//Check with ASCII				
-			    if ((c >= 65 && c <= 122)) 
-			       System.out.println("Alphabet");
-			      
-			    // CHECKING FOR DIGITS  
-			    else if (c >= 48 && c <= 57) 
-			      System.out.println("Digit");     
-			  
-			    // OTHERWISE SPECIAL CHARACTER 
-			    else                                        
-			      System.out.println(" Special Character ");    */ 
-				
 				if (Pattern.compile("[A-Za-z0-9]").matcher(String.valueOf(c)).matches()) {
 					System.out.println(c);
 				}
