@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<order creation-date="2018-01-14">
+    <order-number>771</order-number>
+    <order-status>IN_PROGRESS</order-status>
+    <supplier>
+        <name>Company X</name>
+        <phone>1234567</phone>
+    </supplier>
+    <order-items>
+        <item>
+            <quanitiy>1</quanitiy>
+            <code>PX1234</code>
+            <price>9.99</price>
+        </item>
+        <item>
+            <quanitiy>1</quanitiy>
+            <code>RX990</code>
+            <price>120.32</price>
+        </item>
+    </order-items>
+</order>

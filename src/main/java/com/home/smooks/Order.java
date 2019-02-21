@@ -1,6 +1,7 @@
 package com.home.smooks;
 
 import java.util.Date;
+import java.util.List;
 
 public class Order {
 	
@@ -12,6 +13,9 @@ public class Order {
 	private Long number;
 	private Status status;
 	
+	private Supplier supplier;
+    private List<Item> items;
+    
 	public Date getCreationDate() {
 		return creationDate;
 	}
@@ -30,5 +34,17 @@ public class Order {
 	public void setStatus(Status status) {
 		this.status = status;
 	}
+	public Supplier getSupplier() {
+		return supplier;
+	}
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+	public List<Item> getItems() {
+		return items;
+	}
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}	
 	
 }

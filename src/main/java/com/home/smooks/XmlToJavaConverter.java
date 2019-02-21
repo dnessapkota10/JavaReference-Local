@@ -13,7 +13,7 @@ import org.xml.sax.SAXException;
 
 public class XmlToJavaConverter {
 
-	public Order converOrderXMLToOrderObject(String path) 
+	public Order converOrderXMLToOrderObject(String smooksConfigXml, String xmlFilePath) 
 			  throws IOException, SAXException {
 			  
 //		Smooks smooks = new Smooks("src/main/resources/smooks/XmlToJavaSmooks.xml");
@@ -31,11 +31,11 @@ public class XmlToJavaConverter {
 //		System.out.println(file.getAbsolutePath());
 		
 		// Instantiate Smooks with the config...
-		Smooks smooks = new Smooks("src/main/resources/smooks/XmlToJavaSmooks.xml");
+		Smooks smooks = new Smooks(smooksConfigXml);
 		JavaResult javaResult = new JavaResult();
 
 		// Filter the input message to the JavaResult...
-		smooks.filterSource(new StreamSource(new FileInputStream(path)), javaResult);
+		smooks.filterSource(new StreamSource(new FileInputStream(xmlFilePath)), javaResult);
 
 		// Extract the Order bean from the JavaResult using the beanId...
 		Order order = (Order) javaResult.getBean("order");
